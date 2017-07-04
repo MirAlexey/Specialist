@@ -1,0 +1,2 @@
+goodbye.o: goodbye.c
+hello.o: hello.c
