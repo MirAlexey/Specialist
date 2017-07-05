@@ -7,3 +7,4 @@ all :
 clean :
 	cd ./hello && make clean && cd ..
 	cd ./test && make clean && cd ..
+	rm *~

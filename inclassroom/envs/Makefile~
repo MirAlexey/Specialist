@@ -1,0 +1,9 @@
+.PHONY : all clean
+
+all : evnlist
+
+evnlist : evnlist.c
+	gcc -o $@ $^
+
+clean :
+	rm -f envlist
