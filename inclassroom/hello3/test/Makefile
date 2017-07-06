@@ -6,14 +6,16 @@ HEADERS =
 
 OBJECTS = $(patsubst %.c,%.o,$(SOURCES))
 
-CFLAGS = -I../hello
+CFLAGS = -I$(LPATH)
 
-LIBS = -L../hello -lhello
+LPATH = ../hello
+
+LIBS = -L$(LPATH) -lhello
 
 all : hello
 
 hello : $(OBJECTS)
-	gcc -o $@ $^ $(LIBS)
+	gcc -o $@ $^ $(LIBS) -Wl,-rpath,$(LPATH)
 
 %.o : %.c
 	gcc -c $(CFLAGS) $<
