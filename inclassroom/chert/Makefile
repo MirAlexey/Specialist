@@ -3,7 +3,7 @@
 all : chert
 
 chert : chert.c
-	gcc -o $@ $<
+	gcc -D_REENTRANT -o $@ $<
 
 clean:
 	rm -f chert *~
