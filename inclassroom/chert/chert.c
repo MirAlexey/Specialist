@@ -32,7 +32,7 @@ int main (int argc, char *argv[]) {
       return 1;
    }
    
-   int pid = fork();
+    pid_t pid = fork();
 
    if(pid){
      mylog("I am deamon, deamon started");
