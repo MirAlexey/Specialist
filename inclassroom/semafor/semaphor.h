@@ -2,6 +2,7 @@
 #define SEMAPHOR_H
 #define SEMNAME "server" 
 #include <sys/sem.h>
+#include <stdio.h>
 
 class MySemaphore {
   private:
@@ -19,5 +20,16 @@ class MySemaphore {
    MySemaphore(int index);
    virtual ~MySemaphore();
 };
+
+
+#define DATASIZE (512)
+struct shared_memory {
+  int status;
+  int sizeData ;
+  char szData[DATASIZE];
+};
+
+
+
 #endif // SEMAPHOR_H
 

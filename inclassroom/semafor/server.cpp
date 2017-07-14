@@ -1,22 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <sys/shm.h>
+
+
 #include "semaphor.h"
 
 int main(int argc, char *argv[]){
   
+  struct shared_memory *Mem = 0;
+    
+  int key = ftok ("./server", 1);
+  int idMem = shmget (key, sizeof(struct shared_memory), 0666 | IPC_CREAT);  
+  Mem = (struct shared_memory*) shmat(idMem, 0,0);  
+    
+    
+    
   try {
   
     MySemaphore M(0);
   
     printf("%s (1)\n", argv[2]);
+    
+    Mem->status = 1;
+ 
+    strncpy(Mem->szData, "Hello!!!\n", DATASIZE);
+    Mem->sizeData = strlen(Mem->szData);
+    
+    
+    
+    
+    
+    
     sleep(atoi(argv[1]));
+    
+    printf(" status_mem = %d , data = %s", Mem->status, Mem->szData);
+    Mem->status = Mem->status +1;
     printf("%s (2)\n", argv[2]);
   
   } catch (int) {
     fprintf(stderr, "Cannot create semaphore\n");
   }
-  
+    
+  shmdt( (void*) Mem);
+  shmctl(idMem, IPC_RMID, 0 );
+   
   return 0;
 }
 
