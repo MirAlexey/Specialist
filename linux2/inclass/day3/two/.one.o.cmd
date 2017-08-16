@@ -1,0 +1,1 @@
+cmd_/home/student/prog_linux/linux2/inclass/day3/two/one.o := ld -m elf_x86_64   -r -o /home/student/prog_linux/linux2/inclass/day3/two/one.o /home/student/prog_linux/linux2/inclass/day3/two/one_init.o /home/student/prog_linux/linux2/inclass/day3/two/one_func.o 

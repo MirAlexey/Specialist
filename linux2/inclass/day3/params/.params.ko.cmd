@@ -1,0 +1,1 @@
+cmd_/home/student/prog_linux/linux2/inclass/day3/params/params.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/student/prog_linux/linux2/inclass/day3/params/params.ko /home/student/prog_linux/linux2/inclass/day3/params/params.o /home/student/prog_linux/linux2/inclass/day3/params/params.mod.o

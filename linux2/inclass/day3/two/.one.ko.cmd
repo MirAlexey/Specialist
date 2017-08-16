@@ -1,0 +1,1 @@
+cmd_/home/student/prog_linux/linux2/inclass/day3/two/one.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/student/prog_linux/linux2/inclass/day3/two/one.ko /home/student/prog_linux/linux2/inclass/day3/two/one.o /home/student/prog_linux/linux2/inclass/day3/two/one.mod.o

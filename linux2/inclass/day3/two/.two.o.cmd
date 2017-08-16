@@ -1,0 +1,1 @@
+cmd_/home/student/prog_linux/linux2/inclass/day3/two/two.o := ld -m elf_x86_64   -r -o /home/student/prog_linux/linux2/inclass/day3/two/two.o /home/student/prog_linux/linux2/inclass/day3/two/two_start.o /home/student/prog_linux/linux2/inclass/day3/two/two_stop.o 
