@@ -1,0 +1,1 @@
+cmd_/home/student/prog_linux/linux2/inclass/day4/cdev/cdev.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/student/prog_linux/linux2/inclass/day4/cdev/cdev.ko /home/student/prog_linux/linux2/inclass/day4/cdev/cdev.o /home/student/prog_linux/linux2/inclass/day4/cdev/cdev.mod.o

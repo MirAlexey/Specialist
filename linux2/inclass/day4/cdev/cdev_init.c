@@ -2,11 +2,15 @@
 #include <linux/module.h>
 #include <linux/fs.h>
 
+#include "cdev.h"
+
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Author");
 
 
 #define DEVICE_NAME "cdev"
+
+#define BUF_LEN  100
 // старший номер устройства
 static int major = 0;
 module_param (major, int, 0644);
@@ -29,8 +33,9 @@ static struct file_operations fops ;
 int __init init_module(){
     
     memset(&fops , 0 , sizeof(fops));
-    // fops.open = ???;
-    // fops.read = ???;
+     fops.open = cdev_open;
+     fops.release = cdev_release;
+     fops.read = cdev_read;
     {
         int M = register_chrdev(major, DEVICE_NAME, &fops) ;
         if( M < 0){
