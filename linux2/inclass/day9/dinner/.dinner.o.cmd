@@ -1,0 +1,1 @@
+cmd_/home/student/prog_linux/linux2/inclass/day9/dinner/dinner.o := ld -m elf_x86_64   -r -o /home/student/prog_linux/linux2/inclass/day9/dinner/dinner.o /home/student/prog_linux/linux2/inclass/day9/dinner/dinner_init.o 
